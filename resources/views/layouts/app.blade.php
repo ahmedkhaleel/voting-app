@@ -55,14 +55,52 @@
 
         </header>
     <main class="container mx-auto max-w-custom flex">
-        <div class="w-70 mr-5">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        <div class="  w-70 mr-5">
+            <div class=" bg-white border-2 border-blue rounded-xl mt-16"
+            style=" border-image-source: linear-gradient(to bottom, rgba(50, 138, 241, 0.22), rgba(99, 123, 255, 0));
+                border-image-slice: 1;
+                background-image: linear-gradient(to bottom, #ffffff, #ffffff), linear-gradient(to bottom, rgba(50, 138, 241, 0.22), rgba(99, 123, 255, 0));
+                background-origin: border-box;
+                background-clip: content-box, border-box;
+                    "
+                     >
+                <div class="text-center px-6 py-2 pt-6">
+                    <h3 class="font-semibold text-base">Add an idea</h3
+                        <p class="text-xs mt-4">Let us Know what you would like and we'lltake a look over!</p>
+                </div>
+                <form action="#" method="POSt" class=" space-y-4 px-4 py-6" >
+                    <input type="text" class="w-full bg-gray-100 text-sm rounded-xl placeholder-gray-900 border-none px-4 py-2" placeholder="Your idea">
+                    <div>
+                        <select name="category_id" id="category_add" class="w-full text-sm rounded-xl border-none bg-gray-100 px-4 py-2">
+                            <option value="Category One">Filter One</option>
+                            <option value="Category One">Filter Tow</option>
+                            <option value="Category One">Filter Three</option>
+                            <option value="Category One">Filter Four</option>
+                        </select>
+                    </div>
+                    <div>
+                        <textarea name="idea" id="idea" cols="30" rows="4" class="w-full bg-gray-100 border-none rounded-xl placeholder-gray-900 text-sm px-4 py-2" placeholder="Describe your idea"></textarea>
+                    </div>
+                    <div class="flex items-center justify-between space-x-4">
+                        <button type="button" class="flex items-center justify-center w-1/2 h-11 text-xs bg-gray-200
+                                font-semibold rounded-xl border border-gray-200 hover:border-gray-400 transition duration-150 ease-in px-6 py-3">
+                            <svg class="text-gray-600 w-4 transform -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"></path></svg>
+                            <span class="ml-1">Attach</span>
+                        </button>
+                        <button type="submit" class="flex items-center justify-center w-1/2 h-11 text-xs bg-blue
+                                font-semibold rounded-xl text-white border border-blue hover:bg-blue-hover transition duration-150 ease-in px-6 py-3">
+                            <span class="ml-1">Submit</span>
+                        </button>
+                    </div>
+                </form>
+
+        </div>
         </div>
         <div class="w-175">
             <nav class="flex items-center justify-between text-xs">
                 <ul class="flex uppercase font-semibold border-b-4 pb-3 space-x-10">
                     <li>
-                        <a href="#" class="border-b-4 pb-3 border-blue-700">All Ideas (78)</a>
+                        <a href="#" class="border-b-4 pb-3 border-blue-700lara">All Ideas (78)</a>
                     </li>
                     <li>
                         <a href="#" class="text-gray-400 transition duration-150 ease-in border-b-4 pb-3 hover:border-blue-800">Considering (6)</a>
