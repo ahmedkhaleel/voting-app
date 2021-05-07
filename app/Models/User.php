@@ -32,6 +32,10 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function ideas(){
+        return $this->hasMany(Idea::class);
+    }
+
     /**
      * The attributes that should be cast to native types.
      *
