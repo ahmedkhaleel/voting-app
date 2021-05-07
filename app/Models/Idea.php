@@ -8,15 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Idea extends Model
 {
-    use HasFactory,Sluggable;
+    use HasFactory, Sluggable;
 
-const PAGINATION_COUNT = 10;
-    protected $guarded =[];
+    const PAGINATION_COUNT = 10;
 
-    public function user(){
-        return $this->belongsTo(User::class);
-    }
+    protected $guarded = [];
 
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
     public function sluggable(): array
     {
         return [
@@ -24,5 +26,10 @@ const PAGINATION_COUNT = 10;
                 'source' => 'title'
             ]
         ];
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
