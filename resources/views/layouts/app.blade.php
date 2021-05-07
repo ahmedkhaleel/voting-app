@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Laracasts Voting</title>
+    <title>Ahmed Khaleel - Voting</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
@@ -20,8 +20,9 @@
 </head>
 <body class="font-sans bg-gray-background text-gray-900 text-sm">
 <header class="flex flex-col md:flex-row items-center justify-between px-8 py-4">
-    <a href="#"><img src="{{ asset('img/logo.svg') }}" alt="logo"></a>
-    <div class="flex items-center mt-2 md:mt-0">
+    <h1 class="font-bold text-xl border-2  border-blue px-4 p-4 hover:bg-blue hover:text-white rounded-xl">Ahmed Khaleel - Voting</h1>
+{{--    <a href="#"><img src="{{ asset('img/logo.svg') }}" alt="logo"> </a>--}}
+    <div class="flex items-center mt-2 md:mt-0  ">
         @if (Route::has('login'))
             <div class="px-6 py-4">
                 @auth
