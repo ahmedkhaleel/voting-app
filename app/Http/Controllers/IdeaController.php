@@ -14,8 +14,8 @@ class IdeaController extends Controller
      */
     public function index()
     {
-        return view('idea.index',[
-            'ideas' => Idea::simplePaginate(12),
+        return view('idea.index', [
+            'ideas' => Idea::simplePaginate(Idea::PAGINATION_COUNT),
         ]);
     }
 
@@ -48,7 +48,9 @@ class IdeaController extends Controller
      */
     public function show(Idea $idea)
     {
-       return view('idea.show',['idea' => $idea]);
+        return view('idea.show', [
+            'idea' => $idea,
+        ]);
     }
 
     /**
