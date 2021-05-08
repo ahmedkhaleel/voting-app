@@ -72,6 +72,7 @@
                     <input type="text" class="w-full text-sm bg-gray-100 border-none rounded-xl placeholder-gray-900 px-4 py-2" placeholder="Your Idea">
                 </div>
                 <div>
+
                     <select name="category_add" id="category_add" class="w-full bg-gray-100 text-sm rounded-xl border-none px-4 py-2">
                         <option value="Category One">Category One</option>
                         <option value="Category Two">Category Two</option>
