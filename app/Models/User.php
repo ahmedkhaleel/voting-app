@@ -41,9 +41,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
     public function ideas()
     {
         return $this->hasMany(Idea::class);
+    }
+
+    public function votes()
+    {
+        return $this->belongsToMany(Idea::class,'votes');
+
     }
 
     public function getAvatar()

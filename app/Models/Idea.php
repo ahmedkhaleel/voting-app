@@ -32,6 +32,10 @@ class Idea extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function votes()
+    {
+        return $this->belongsToMany(User::class,'votes');
+    }
 
     public function category(){
         return $this->belongsTo(Category::class);
@@ -65,4 +69,5 @@ class Idea extends Model
 ////        }else
 ////        return 'bg-gray-200';
 //    }
+
 }
