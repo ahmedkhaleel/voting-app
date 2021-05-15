@@ -15,12 +15,14 @@
     class="idea-container hover:shadow-card transition  duration-150 ease-in bg-white rounded-xl flex cursor-pointer">
     <div class="hidden md:block border-r border-gray-100 px-5 py-8">
         <div class="text-center">
-            <div class="font-semisolid text-2xl">{{$votesCount}}</div>
+            <div class="font-semisolid text-2xl @if ($hasVoted) text-blue @endif ">{{$votesCount}}</div>
             <div class="text-gray-500">Votes</div>
         </div>
 
         <div class="mt-8">
-            <button class="w-20 bg-gray-200 border border-gray-200 hover:border-gray-400 font-bold text-xxs uppercase rounded-xl transition duration-150 ease-in px-4 py-3">Vote</button>
+            <button
+                wire:click.prevent="vote"
+                class="w-20 bg-gray-200 border border-gray-200 hover:bg-blue-hover font-bold text-xxs uppercase rounded-xl transition duration-150 ease-in px-4 py-3 @if ($hasVoted) bg-blue text-white @endif">Vote</button>
         </div>
     </div>
     <div class="flex flex-col md:flex-row flex-1 px-2 py-6">
@@ -61,7 +63,7 @@
                             x-show.transition.origin.top.left="isOpen"
                             @click.away="isOpen = false"
                             @keydown.escape.window="isOpen = false"
-                            class="absolute w-44 text-left font-semibold bg-white shadow-dialog rounded-xl py-3 md:ml-8 top-8 md:top-6 right-0 md:left-0"
+                            class="absolute w-44 text-left font-semisolid bg-white shadow-dialog rounded-xl py-3 md:ml-8 top-8 md:top-6 right-0 md:left-0"
                         >
                             <li><a href="#" class="hover:bg-gray-100 block transition duration-150 ease-in px-5 py-3">Mark as Spam</a></li>
                             <li><a href="#" class="hover:bg-gray-100 block transition duration-150 ease-in px-5 py-3">Delete Post</a></li>
@@ -71,14 +73,24 @@
 
                 <div class="flex items-center md:hidden mt-4 md:mt-0">
                     <div class="bg-gray-100 text-center rounded-xl h-10 px-4 py-2 pr-8">
-                        <div class="text-sm font-bold leading-none">{{$votesCount}}</div>
+                        <div class="text-sm font-bold leading-none @if($hasVoted) text-blue @endif">{{$votesCount}}</div>
                         <div class="text-xxs font-semibold leading-none text-gray-400">Votes</div>
                     </div>
-                    <button
-                        class="w-20 bg-gray-200 border border-gray-200 font-bold text-xxs uppercase rounded-xl hover:border-gray-400 transition duration-150 ease-in px-4 py-3 -mx-5"
-                    >
-                        Vote
-                    </button>
+                    @if ($hasVoted)
+                        <button
+                            wire:click.prevent="vote"
+                            class="w-20 bg-blue border border-blue font-bold text-xxs uppercase rounded-xl hover:bg-blue-hover text-white transition duration-150 ease-in px-4 py-3 -mx-5"
+                        >
+                            Vote
+                        </button>
+                      @else
+                        <button
+                            wire:click.prevent="vote"
+                            class="w-20 bg-gray-200 border border-gray-200 font-bold text-xxs uppercase rounded-xl hover:border-gray-400 transition duration-150 ease-in px-4 py-3 -mx-5"
+                        >
+                            Vote
+                        </button>
+                    @endif
                 </div>
             </div>
         </div>
