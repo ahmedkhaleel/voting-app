@@ -92,8 +92,8 @@ class VoteShowPageTest extends TestCase
             'votesCount' => 5,
         ])
             ->assertSet('votesCount', 5)
-            ->assertSeeHtml('<div class="text-xl leading-snug">5</div>')
-            ->assertSeeHtml('<div class="text-sm font-bold leading-none">5</div>');
+            ->assertSeeHtml('<div class="text-xl leading-snug  text-blue ">5</div>')
+            ->assertSeeHtml('<div class="text-gray-400 text-xs leading-none">5</div>');
     }
 
     /** @test */
